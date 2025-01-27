@@ -3,34 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slideshow Background</title>
+    <title>Slideshowt</title>
     <style>
         body {
             margin: 0;
             overflow: hidden;
             height: 100vh;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            color: white;
-            font-family: 'Times New Roman', Times, serif;
-            transition: background-image 1s ease-in-out;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            z-index: 0; /* Backgrounds stay at the back */
         }
 
         .GoldenOlive {
-            color: #c7a752;
-            font-size: 30px;
+            font-size: 50px;
             text-align: center;
             position: absolute;
-            top: 50%;
+            top: 10%;
             left: 50%;
             transform: translate(-50%, -50%);
+            z-index: 1;
+            transition: color 1s ease-in-out; /* Smooth color transition */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <h1 class="GoldenOlive">Hello world</h1>
-    
+    <div class="GoldenOlive">Hello world</div>
+
     <script>
         const images = [
             "../img/idyllic-farm-landscape-stockcake.jpg",
@@ -38,18 +57,38 @@
             "../img/istockphoto-1403665879-612x612.jpg"
         ];
 
+        const colors = [
+            "#C7A752", // Matches Image 1
+            "#415929", // Matches Image 2
+            "#727D37"  // Matches Image 3
+        ];
+
         let currentIndex = 0;
+        const interval = 4000;
 
         function changeBackground() {
-            document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
-            currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
+            // Remove any existing background elements
+            document.querySelectorAll('.background').forEach(bg => bg.remove());
+
+            // Create a new background element
+            const background = document.createElement('div');
+            background.classList.add('background');
+            background.style.backgroundImage = `url('${images[currentIndex]}')`;
+            document.body.appendChild(background);
+
+            // Update the text color to match the image
+            const textElement = document.querySelector('.GoldenOlive');
+            textElement.style.color = colors[currentIndex];
+
+            // Update the index
+            currentIndex = (currentIndex + 1) % images.length;
         }
 
-        // Initial background setup
+        // Initial background and text setup
         changeBackground();
 
-        // Change background every 5 seconds
-        setInterval(changeBackground, 5000);
+        // Change background and text color at regular intervals
+        setInterval(changeBackground, interval);
     </script>
 </body>
 </html>
