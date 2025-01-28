@@ -30,8 +30,8 @@
             font-size: 50px;
             text-align: center;
             position: absolute;
-            top: 10%;
-            left: 50%;
+            top: 25%;
+            left: 20%;
             transform: translate(-50%, -50%);
             z-index: 1;
             transition: color 1s ease-in-out; /* Smooth color transition */
