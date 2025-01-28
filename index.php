@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slideshowt</title>
+    <title>Slideshow</title>
     <style>
         body {
             margin: 0;
@@ -31,10 +31,13 @@
             text-align: center;
             position: absolute;
             top: 25%;
-            left: 20%;
+            left: 80%;
             transform: translate(-50%, -50%);
             z-index: 1;
-            transition: color 1s ease-in-out; /* Smooth color transition */
+            color: white; /* Keep the text white */
+            padding: 20px 40px;
+            border-radius: 10px;
+            transition: background-color 1s ease-in-out; /* Smooth background color transition */
         }
 
         @keyframes fadeIn {
@@ -76,18 +79,18 @@
             background.style.backgroundImage = `url('${images[currentIndex]}')`;
             document.body.appendChild(background);
 
-            // Update the text color to match the image
+            // Update the text block's background color
             const textElement = document.querySelector('.GoldenOlive');
-            textElement.style.color = colors[currentIndex];
+            textElement.style.backgroundColor = colors[currentIndex];
 
             // Update the index
             currentIndex = (currentIndex + 1) % images.length;
         }
 
-        // Initial background and text setup
+        // Initial background and text block setup
         changeBackground();
 
-        // Change background and text color at regular intervals
+        // Change background and text block color at regular intervals
         setInterval(changeBackground, interval);
     </script>
 </body>
