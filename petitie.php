@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Petition Form</title>
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petition Form</title>
+    <style>
         body {
             font-family: 'Times New Roman', Times, serif;
             margin: 0;
@@ -92,71 +92,86 @@
                 opacity: 1;
             }
         }
-</style>
+    </style>
 </head>
 <body>
 <div class="nav">
-<div class="nav-links">
-<a href="home.php">Home</a>
-<a href="about.php">About</a>
-<a href="contact.php">Contact</a>
-<a href="presentatie.php">presentatie</a>
-<a href="poster.php">Posters</a>
-<a href="petitie.php">Petitie</a>
-</div>
+    <div class="nav-links">
+        <a href="home.php">Home</a>
+        <a href="about.php">About</a>
+        <a href="contact.php">Contact</a>
+        <a href="presentatie.php">Presentatie</a>
+        <a href="poster.php">Posters</a>
+        <a href="petitie.php">Petitie</a>
+    </div>
 </div>
 <div class="form-container">
-<h2>Sign the Petition</h2>
-<form action="receive_petition.php" method="POST" onsubmit="return validateForm()">
-<label for="email">Email:</label>
-<input type="email" id="email" name="email" required>
-<label for="comment">Your Comment:</label>
-<textarea id="comment" name="comment" rows="4" required></textarea>
-<div class="checkbox-group">
-<label>
-<input type="radio" name="petition_choice" value="agree" required>
-                    I agree to the petition.
-</label>
-<label>
-<input type="radio" name="petition_choice" value="disagree" required>
-                    I disagree with the petition.
-</label>
+    <h2>Sign the Petition</h2>
+    <form action="receive_petition.php" method="POST" onsubmit="return validateForm()">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <div class="checkbox-group">
+            <label>
+                <input type="radio" name="petition_choice" value="save_money" required>
+                I do it to save money.
+            </label>
+            <label>
+                <input type="radio" name="petition_choice" value="save_planet" required>
+                I do it to save the planet.
+            </label>
+            <label>
+                <input type="radio" name="petition_choice" value="guilt" required>
+                I do it out of guilt.
+            </label>
+            <label>
+                <input type="radio" name="petition_choice" value="other" required onclick="toggleOtherComment(true)">
+                Other..
+            </label>
+        </div>
+
+        <label for="comment">Your Comment:</label>
+        <textarea id="comment" name="comment" rows="4" required></textarea>
+
+        <label for="other_comment" id="other_comment_label" style="display:none;">Specify:</label>
+        <textarea id="other_comment" name="other_comment" rows="4" style="display:none;"></textarea>
+
+        <button type="submit">Sign Petition</button>
+    </form>
 </div>
-<button type="submit">Sign Petition</button>
-</form>
-</div>
+
 <script>
-        const images = [
-            "../img/Nature-positive-in-agri-food-value-chains-the-why-and-the-how_i1140.jpg",
-            "../img/dreamstime_xl_71214312-scaled.jpg",
-            "../img/f3065cf2-375c-4473-9db8-ab8eeae00e12_large.jpg",
-        ];
-        let currentIndex = 0;
-        const interval = 7000;
-        function changeBackground() {
-            document.querySelectorAll('.background').forEach(bg => bg.remove());
-            const background = document.createElement('div');
-            background.classList.add('background');
-            background.style.backgroundImage = `url('${images[currentIndex]}')`;
-            document.body.appendChild(background);
-            currentIndex = (currentIndex + 1) % images.length;
+    function toggleOtherComment(show) {
+        const otherComment = document.getElementById("other_comment");
+        const otherLabel = document.getElementById("other_comment_label");
+        if (show) {
+            otherComment.style.display = "block";
+            otherLabel.style.display = "block";
+        } else {
+            otherComment.style.display = "none";
+            otherLabel.style.display = "none";
         }
-        changeBackground();
-        setInterval(changeBackground, interval);
-        function validateForm() {
-            const checkboxes = document.querySelectorAll('input[name="petition_choice"]');
-            let checked = false;
-            checkboxes.forEach((checkbox) => {
-                if (checkbox.checked) {
-                    checked = true;
-                }
-            });
-            if (!checked) {
-                alert("Please select either agree or disagree.");
-                return false;
+    }
+
+    const images = [
+        "../img/terrace-farming-rice-fields-agriculture-country-side-5120x2880-6411.jpg",
+    ];
+
+    function validateForm() {
+        const checkboxes = document.querySelectorAll('input[name="petition_choice"]');
+        let checked = false;
+        checkboxes.forEach((checkbox) => {
+            if (checkbox.checked) {
+                checked = true;
             }
-            return true;
+        });
+        if (!checked) {
+            alert("Please select one option.");
+            return false;
         }
+        return true;
+    }
 </script>
+
 </body>
 </html>
