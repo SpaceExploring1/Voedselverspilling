@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <style>
-    body {
+          body {
         margin: 0;
         overflow-x: hidden; /* Prevent horizontal overflow */
         height: 100vh;
@@ -29,14 +29,16 @@
 }
 
 .nav-links {
+    font-size: 3em;
     display: flex;
-    gap: 30px; /* Space between navigation links */
+    justify-content: space-between; /* Center items vertically */
+    gap: 190px; /* Space between navigation links */
 }
 
 .nav a {
+    font-size: 25px;
     text-decoration: none;
     color: #c7a752;
-    font-size: 18px; /* Ensure links are readable */
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -51,8 +53,8 @@
 }
 
 .social-links img {
-    width: 24px; /* Consistent size for social icons */
-    height: 24px;
+    width: 40px; /* Consistent size for social icons */
+    height: 40px;
     transition: transform 0.3s ease;
 }
 
@@ -100,18 +102,20 @@
             opacity: 1;
         }
     }
-
     </style>
 </head>
 <body>
+    <form action=""></form>
     <!-- Navbar -->
     <div class="nav">
         <div class="nav-links">
             <a href="home.php">Home</a>
             <a href="about.php">About</a>
             <a href="contact.php">Contact</a>
+            <a href="presentatie.php">presentatie</a>
             <a href="poster.php">Posters</a>
             <a href="petitie.php">Petitie</a>
+
         </div>
         <div class="social-links">
             <a href="https://www.instagram.com/appelcatering/" target="_blank">
@@ -134,7 +138,6 @@
     "../img/Nature-positive-in-agri-food-value-chains-the-why-and-the-how_i1140.jpg",
     "../img/dreamstime_xl_71214312-scaled.jpg",
     "../img/f3065cf2-375c-4473-9db8-ab8eeae00e12_large.jpg",
-    "../img/"  // Added missing comma here
 ];
 
 
