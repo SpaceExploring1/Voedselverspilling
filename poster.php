@@ -11,10 +11,12 @@
             font-family: 'Times New Roman', Times, serif;
             overflow-x: hidden;
             height: 100vh;
+            background-image: url('../img/poster_background.jpg');
         }
 
         .background {
     position: fixed;
+    background-color: white;
     top: 50%; /* Centered vertically */
     left: 50%; /* Centered horizontally */
     transform: translate(-50%, -50%);
@@ -27,7 +29,7 @@
     background-position: center;
     background-repeat: no-repeat;
     z-index: 0;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 9px 6px rgba(0, 0, 0, 0.5);
     
 }
 
