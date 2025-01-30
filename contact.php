@@ -31,7 +31,7 @@
         <!-- </div> -->
 </header>
 <div class="form-container">
-    <h2>Contact with our!</h2>
+    <h2>maak contact mens ons!</h2>
     <form action="receive_petition.php" method="POST" onsubmit="return validateForm()">
         <label for="email">Title:</label>
         <input type="t" id="email" name="email" required>
