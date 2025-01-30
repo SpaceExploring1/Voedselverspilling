@@ -121,8 +121,7 @@
     </div>
 
     <!-- Welcome Text Block -->
-    <div class="GoldenOlive">Welcome</div>
-
+    <div class="GoldenOlive">Welkom! Hier op deze website voor appél, gaat het om het samenwerken tegen voedselverspilling</div>
     <script>
         const images = [
             "../img/Nature-positive-in-agri-food-value-chains-the-why-and-the-how_i1140.jpg",
@@ -170,7 +169,10 @@
             currentIndex = (currentIndex + 1) % images.length;
         }
 
-        setInterval(changeBackground, interval);
+        // Ensure the transition loop runs endlessly without cutting
+        setInterval(() => {
+            changeBackground();
+        }, interval);
     </script>
 </body>
 </html>

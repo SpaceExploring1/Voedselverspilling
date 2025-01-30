@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petition Form</title>
+    <title>Petitieformulier</title>
     <link href="about.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -30,37 +30,37 @@
         <!-- </div> -->
 </header>
 <div class="form-container">
-    <h2>Contact with our!</h2>
+    <h2>Neem contact met ons op!</h2>
     <form action="receive_mail.php" method="POST" onsubmit="return validateForm()">
-        <label for="title">Title:</label>
+        <label for="title">Titel:</label>
         <input type="text" id="email" name="title" required>
 
         <!-- <div class="checkbox-group">
             <label>
                 <input type="radio" name="petition_choice" value="save_money" required>
-                I do it to save money.
+                Ik doe het om geld te besparen.
             </label>
             <label>
                 <input type="radio" name="petition_choice" value="save_planet" required>
-                I do it to save the planet.
+                Ik doe het om de planeet te redden.
             </label>
             <label>
                 <input type="radio" name="petition_choice" value="guilt" required>
-                I do it out of guilt.
+                Ik doe het uit schuldgevoel.
             </label>
             <label>
                 <input type="radio" name="petition_choice" value="other" required onclick="toggleOtherComment(true)">
-                Other..
+                Anders..
             </label>
         </div> -->
 
-        <label for="comment">Your mail:</label>
+        <label for="comment">Jouw bericht:</label>
         <textarea id="comment" name="comment" rows="4" required></textarea>
 <!-- 
-        <label for="other_comment" id="other_comment_label" style="display:none;">Specify:</label>
+        <label for="other_comment" id="other_comment_label" style="display:none;">Specificeer:</label>
         <textarea id="other_comment" name="other_comment" rows="4" style="display:none;"></textarea> -->
 
-        <button type="submit">Submit</button>
+        <button type="submit">Verstuur</button>
     </form>
     
 </div>
