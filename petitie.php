@@ -122,7 +122,7 @@
         <a href="about.php">About</a>
         <a href="contact.php">Contact</a>
         <a href="presentatie.php">Presentatie</a>
-        <a href="poster.php">Posters</a>
+        <a href="poster.php">Poster</a>
         <a href="petitie.php">Petitie</a>
     </div>
 </div>
