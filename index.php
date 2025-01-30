@@ -49,7 +49,7 @@
 
 .social-links {
     display: flex;
-    gap: 15px; /* Space between social icons */
+    gap: 25px; /* Space between social icons */
 }
 
 .social-links img {
@@ -109,7 +109,7 @@
     <!-- Navbar -->
     <div class="nav">
         <div class="nav-links">
-            <a href="home.php">Home</a>
+            <a href="index.php">Home</a>
             <a href="about.php">About</a>
             <a href="contact.php">Contact</a>
             <a href="presentatie.php">presentatie</a>
@@ -131,7 +131,7 @@
     </div>
 
     <!-- Text Block -->
-    <div class="GoldenOlive">Hello World</div>
+    <div class="GoldenOlive">Welcome</div>
 
     <script>
         const images = [

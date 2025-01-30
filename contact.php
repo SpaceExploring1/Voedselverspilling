@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petition Form</title>
-    <style>
+    <title>Document</title>
+</head>
+<body>
+<style>
         body {
 
         font-family: 'Times New Roman', Times, serif;
@@ -27,9 +29,7 @@
 
         background-repeat: no-repeat;
 
-}
-
-
+        }
         .nav {
             position: fixed;
             top: 0;
@@ -126,73 +126,5 @@
         <a href="petitie.php">Petitie</a>
     </div>
 </div>
-<div class="form-container">
-    <h2>Sign the Petition</h2>
-    <form action="receive_petition.php" method="POST" onsubmit="return validateForm()">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <div class="checkbox-group">
-            <label>
-                <input type="radio" name="petition_choice" value="save_money" required>
-                I do it to save money.
-            </label>
-            <label>
-                <input type="radio" name="petition_choice" value="save_planet" required>
-                I do it to save the planet.
-            </label>
-            <label>
-                <input type="radio" name="petition_choice" value="guilt" required>
-                I do it out of guilt.
-            </label>
-            <label>
-                <input type="radio" name="petition_choice" value="other" required onclick="toggleOtherComment(true)">
-                Other..
-            </label>
-        </div>
-
-        <label for="comment">Your Comment:</label>
-        <textarea id="comment" name="comment" rows="4" required></textarea>
-
-        <label for="other_comment" id="other_comment_label" style="display:none;">Specify:</label>
-        <textarea id="other_comment" name="other_comment" rows="4" style="display:none;"></textarea>
-
-        <button type="submit">Sign Petition</button>
-    </form>
-</div>
-
-<script>
-    function toggleOtherComment(show) {
-        const otherComment = document.getElementById("other_comment");
-        const otherLabel = document.getElementById("other_comment_label");
-        if (show) {
-            otherComment.style.display = "block";
-            otherLabel.style.display = "block";
-        } else {
-            otherComment.style.display = "none";
-            otherLabel.style.display = "none";
-        }
-    }
-
-    const images = [
-        "../img/terrace-farming-rice-fields-agriculture-country-side-5120x2880-6411.jpg",
-    ];
-
-    function validateForm() {
-        const checkboxes = document.querySelectorAll('input[name="petition_choice"]');
-        let checked = false;
-        checkboxes.forEach((checkbox) => {
-            if (checkbox.checked) {
-                checked = true;
-            }
-        });
-        if (!checked) {
-            alert("Please select one option.");
-            return false;
-        }
-        return true;
-    }
-</script>
-
 </body>
 </html>
