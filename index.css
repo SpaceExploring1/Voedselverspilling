@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background: #ffffff; /* Fallback color */
+}
+
+/* Background Layers for Smooth Transition */
+.background, .background-next {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.background-next {
+    opacity: 0;
+}
+
+/* Navbar */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+.nav a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #c7a752;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.nav a:hover {
+    color: #415929;
+}
+
+/* Social Media Icons */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+.social-links img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+/* Welcome Text Block */
+.GoldenOlive {
+    font-size: 50px;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    transition: background-color 1s ease-in-out;
+}

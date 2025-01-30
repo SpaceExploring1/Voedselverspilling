@@ -21,7 +21,6 @@
             width: 100%;
             height: 100%;
             background-size: cover;
-            /* background-position: center; */
             background-repeat: no-repeat;
             transition: opacity 1.5s ease-in-out;
         }
@@ -45,12 +44,14 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             z-index: 10;
         }
+
         .nav-links {
             font-size: 3em;
             display: flex;
             justify-content: space-between;
             gap: 190px;
         }
+
         .nav a {
             font-size: 25px;
             text-decoration: none;
@@ -58,6 +59,7 @@
             font-weight: bold;
             transition: color 0.3s ease;
         }
+
         .nav a:hover {
             color: #415929;
         }
@@ -140,6 +142,7 @@
 
         const bg2 = document.createElement("div");
         bg2.classList.add("background-next");
+        bg2.style.backgroundImage = `url('${images[1]}')`; // Set initial image for bg2
 
         document.body.prepend(bg1, bg2);
 
@@ -147,19 +150,23 @@
             const activeBg = document.querySelector(".background");
             const nextBg = document.querySelector(".background-next");
 
-            // Set the new image
+            // Set the new image for the next background
             nextBg.style.backgroundImage = `url('${images[currentIndex]}')`;
-            nextBg.style.opacity = "1"; // Fade in new image
 
-            setTimeout(() => {
-                activeBg.style.backgroundImage = nextBg.style.backgroundImage;
-                nextBg.style.opacity = "0"; // Hide old image
-            }, 1500); // Match CSS transition
+            // Fade in the next background
+            nextBg.style.transition = "opacity 1.5s ease-in-out";
+            nextBg.style.opacity = "1"; 
 
-            // Change text block color
+            // Change the text color
             document.querySelector(".GoldenOlive").style.backgroundColor = colors[currentIndex];
 
-            // Update index
+            // After fade-in, swap the images
+            setTimeout(() => {
+                activeBg.style.backgroundImage = nextBg.style.backgroundImage; // Swap images
+                nextBg.style.opacity = "0"; // Hide the next background for the next cycle
+            }, 1500); // Wait until the full fade-in duration
+
+            // Update index for the next background
             currentIndex = (currentIndex + 1) % images.length;
         }
 
