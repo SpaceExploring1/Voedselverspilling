@@ -5,117 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <style>
-          body {
-        margin: 0;
-        overflow-x: hidden; /* Prevent horizontal overflow */
-        height: 100vh;
-        font-family: 'Times New Roman', Times, serif;
-        box-sizing: border-box; /* Ensure proper sizing */
-    }
+        body {
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            font-family: 'Times New Roman', Times, serif;
+            box-sizing: border-box;
+        }
 
-    .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 98%;
-    background-color: white;
-    height: 70px; /* Consistent height */
-    display: flex;
-    justify-content: space-between; /* Distribute space between nav-links and social-links */
-    align-items: center; /* Center items vertically */
-    padding: 0 20px; /* Add consistent padding on both sides */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-    z-index: 10;
-}
+        /* Background Layers for Smooth Transition */
+        .background, .background-next {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            /* background-position: center; */
+            background-repeat: no-repeat;
+            transition: opacity 1.5s ease-in-out;
+        }
 
-.nav-links {
-    font-size: 3em;
-    display: flex;
-    justify-content: space-between; /* Center items vertically */
-    gap: 190px; /* Space between navigation links */
-}
-
-.nav a {
-    font-size: 25px;
-    text-decoration: none;
-    color: #c7a752;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.nav a:hover {
-    color: #415929;
-}
-
-.social-links {
-    display: flex;
-    gap: 25px; /* Space between social icons */
-}
-
-.social-links img {
-    width: 40px; /* Consistent size for social icons */
-    height: 40px;
-    transition: transform 0.3s ease;
-}
-
-.social-links img:hover {
-    transform: scale(1.1); /* Add hover effect */
-}
-
-
-
-    /* Slideshow Background Styling */
-    .background {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0;
-        animation: fadeIn 1s ease-in-out forwards;
-        z-index: 0; /* Background stays at the back */
-    }
-
-    /* Text Block Styling */
-    .GoldenOlive {
-        font-size: 50px;
-        text-align: center;
-        position: absolute;
-        top: 30%;
-        left: 80%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        color: white; /* Keep the text white */
-        padding: 20px 40px;
-        border-radius: 10px;
-        transition: background-color 1s ease-in-out; /* Smooth background color transition */
-    }
-
-    @keyframes fadeIn {
-        from {
+        .background-next {
             opacity: 0;
         }
-        to {
-            opacity: 1;
+
+        /* Navbar */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 98%;
+            background-color: white;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 10;
         }
-    }
+        .nav-links {
+            font-size: 3em;
+            display: flex;
+            justify-content: space-between;
+            gap: 190px;
+        }
+        .nav a {
+            font-size: 25px;
+            text-decoration: none;
+            color: #c7a752;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .nav a:hover {
+            color: #415929;
+        }
+
+        /* Social Media Icons */
+        .social-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Welcome Text Block */
+        .GoldenOlive {
+            font-size: 50px;
+            text-align: center;
+            position: absolute;
+            top: 30%;
+            left: 80%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            transition: background-color 1s ease-in-out;
+        }
     </style>
 </head>
 <body>
-    <form action=""></form>
     <!-- Navbar -->
     <div class="nav">
         <div class="nav-links">
             <a href="index.php">Home</a>
-            <a href="about.php">About</a>
+            <a href="about.php">Over</a>
             <a href="contact.php">Contact</a>
-            <a href="presentatie.php">presentatie</a>
-            <a href="poster.php">Poster</a>
+            <a href="presentatie.php">Presentatie</a>
+            <a href="poster.php">Posters</a>
             <a href="petitie.php">Petitie</a>
-
         </div>
         <div class="social-links">
             <a href="https://www.instagram.com/appelcatering/" target="_blank">
@@ -130,48 +118,51 @@
         </div>
     </div>
 
-    <!-- Text Block -->
+    <!-- Welcome Text Block -->
     <div class="GoldenOlive">Welcome</div>
 
     <script>
         const images = [
-    "../img/Nature-positive-in-agri-food-value-chains-the-why-and-the-how_i1140.jpg",
-    "../img/dreamstime_xl_71214312-scaled.jpg",
-    "../img/f3065cf2-375c-4473-9db8-ab8eeae00e12_large.jpg",
-];
-
-
-        const colors = [
-            "#C7A752", // Matches Image 1
-            "#415929", // Matches Image 2
-            "#727D37"  // Matches Image 3
+            "../img/Nature-positive-in-agri-food-value-chains-the-why-and-the-how_i1140.jpg",
+            "../img/dreamstime_xl_71214312-scaled.jpg",
+            "../img/f3065cf2-375c-4473-9db8-ab8eeae00e12_large.jpg",
         ];
 
+        const colors = ["#C7A752", "#415929", "#727D37"];
+
         let currentIndex = 0;
-        const interval = 7000;
+        const interval = 3000;
+
+        // Create two background layers for seamless transition
+        const bg1 = document.createElement("div");
+        bg1.classList.add("background");
+        bg1.style.backgroundImage = `url('${images[0]}')`;
+
+        const bg2 = document.createElement("div");
+        bg2.classList.add("background-next");
+
+        document.body.prepend(bg1, bg2);
 
         function changeBackground() {
-            // Remove any existing background elements
-            document.querySelectorAll('.background').forEach(bg => bg.remove());
+            const activeBg = document.querySelector(".background");
+            const nextBg = document.querySelector(".background-next");
 
-            // Create a new background element
-            const background = document.createElement('div');
-            background.classList.add('background');
-            background.style.backgroundImage = `url('${images[currentIndex]}')`;
-            document.body.appendChild(background);
+            // Set the new image
+            nextBg.style.backgroundImage = `url('${images[currentIndex]}')`;
+            nextBg.style.opacity = "1"; // Fade in new image
 
-            // Update the text block's background color
-            const textElement = document.querySelector('.GoldenOlive');
-            textElement.style.backgroundColor = colors[currentIndex];
+            setTimeout(() => {
+                activeBg.style.backgroundImage = nextBg.style.backgroundImage;
+                nextBg.style.opacity = "0"; // Hide old image
+            }, 1500); // Match CSS transition
 
-            // Update the index
+            // Change text block color
+            document.querySelector(".GoldenOlive").style.backgroundColor = colors[currentIndex];
+
+            // Update index
             currentIndex = (currentIndex + 1) % images.length;
         }
 
-        // Initial background and text block setup
-        changeBackground();
-
-        // Change background and text block color at regular intervals
         setInterval(changeBackground, interval);
     </script>
 </body>

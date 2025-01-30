@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    padding: 0;
+    color:#c7a752;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px; /* Add margin to create space between the body and the text */
+    overflow-x: hidden;
+    /* height: 100%; */
+    box-sizing: border-box;
+    background-image: url('../img/terrace-farming-rice-fields-agriculture-country-side-5120x2880-6411.jpg');
+    background-size: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+}
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 98%;
+    background-color: white;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+.nav-links {
+    font-size: 3em;
+    display: flex;
+    justify-content: space-between;
+    gap: 190px;
+}
+.nav a, .nav-text a{
+    font-size: 25px;
+    text-decoration: none;
+    color: #c7a752;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.nav a:hover, .nav-text a:hover {
+    color: #415929;
+}
+.social-links {
+    display: flex;
+    gap: 25px;
+}
+.social-links img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+.social-links img:hover {
+    transform: scale(1.1);
+}
+.form-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 50px;
+    top: 50px;
+    left: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px rgba(199, 167, 82, 1);
+    background: white;
+    position: relative;
+    z-index: 2;
+}
+.form-container input, .form-container button, .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+}
+.checkbox-group input {
+    width: auto;
+    margin-right: 10px;
+}
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    z-index: 0;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.social-links {
+display: flex;
+    /* gap: 25px; */
+    
+}
+
+.social-links img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+/* Flex container to align both text blocks */
+.text-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    gap: 30px;  /* 30px gap between text blocks */
+    margin-top: 150px; /* Adds space from the top */
+    padding: 0 20px; /* Adds horizontal padding */
+}
+
+.text-block, .text-block2 {
+width: 45%;  /* Adjusted to 45% for each block */
+padding: 20px;
+background-color: rgba(69, 70, 28, 0.6);
+border-radius: 10px;
+box-shadow: 5px 5px 8px rgba(199, 167, 82, 0.6);
+height: auto;  /* Let the height adjust according to the content */
+color: #c7a752;  
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9); /* Added shading to text */
+filter: brightness(1.1) contrast(1.4); /* Added brightness and contrast */
+}
+h1 {
+font-size: 25px;
+}
+
+.text-block p, .text-block2 p {
+    margin: 0;
+    line-height: 1.6;
+}
+.img {  
+max-width: 100%;
+height: auto;
+border-radius: 10px;
+box-shadow: 5px 5px 8px rgba(199, 167, 82, 0.6);
+margin-top: 50px;
+margin-left: 130px;
+}
+
+.form-container{
+    color: black;
+}
+
+.video {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    background: red;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    max-width: 90vw; /* Responsive max-width */
+    max-height: 90vh; /* Responsive max-height */
+    box-shadow: 5px 5px 8px rgba(199, 167, 82, 1);
+    z-index: 1;
+}
+/* Fade-in Effect */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.background {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Centered Poster */
+.background {
+    position: fixed;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    max-width: 90vw; /* Responsive max-width */
+    max-height: 90vh; /* Responsive max-height */
+    background-image: url('../img/poster.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    box-shadow: 5px 5px 8px rgba(199, 167, 82, 1);
+    z-index: 1;
+}

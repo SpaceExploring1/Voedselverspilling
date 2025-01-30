@@ -13,7 +13,7 @@
 
         overflow-x: hidden;
 
-        height: 100vh;
+        /* height: 100vh; */
 
         box-sizing: border-box;
 
@@ -23,7 +23,7 @@
 
         background-size: cover;
 
-        background-position: center;
+        /* background-position: center; */
 
         background-repeat: no-repeat;
 
@@ -78,6 +78,20 @@
             padding: 10px;
             margin: 10px 0;
         }
+        .social-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links img:hover {
+            transform: scale(1.1);
+        }
         .checkbox-group {
             display: flex;
             flex-direction: column;
@@ -119,12 +133,23 @@
 <div class="nav">
     <div class="nav-links">
         <a href="index.php">Home</a>
-        <a href="about.php">About</a>
+        <a href="about.php">Over</a>
         <a href="contact.php">Contact</a>
         <a href="presentatie.php">Presentatie</a>
         <a href="poster.php">Poster</a>
         <a href="petitie.php">Petitie</a>
     </div>
+    <div class="social-links">
+            <a href="https://www.instagram.com/appelcatering/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/appelcatering" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            </a>
+            <a href="https://www.linkedin.com/connect-services/ads_experience/?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fappel-bv%2F" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+            </a>
+        </div>
 </div>
 <div class="form-container">
     <h2>Sign the Petition</h2>
@@ -159,6 +184,7 @@
 
         <button type="submit">Sign Petition</button>
     </form>
+    
 </div>
 
 <script>
